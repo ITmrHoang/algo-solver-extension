@@ -1,0 +1,9 @@
+# Node / OS
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Antigravity temporary files
+scratch/
+.system_generated/

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Algo Solver — AI Algorithm Assistant",
+  "version": "1.0.0",
+  "description": "Solve algorithms, fix bugs, and optimize code using Google AI Studio. Ctrl+Alt+C to solve, results auto-copied to clipboard.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "clipboardRead",
+    "activeTab",
+    "scripting",
+    "commands",
+    "offscreen"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Algo Solver"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "commands": {
+    "solve-algorithm": {
+      "suggested_key": {
+        "default": "Alt+Shift+C"
+      },
+      "description": "Solve or optimize algorithm from selected text",
+      "global": true
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
