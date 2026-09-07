@@ -7,8 +7,8 @@ const APP_CONFIG = {
   // Ngôn ngữ mặc định ('Python', 'JavaScript', 'TypeScript', 'Java', 'C++', 'Rust', ...)
   DEFAULT_LANGUAGE: 'Python',
   
-  // Model mặc định (tự động trỏ đến Gemini 3.8 Flash mới nhất):
-  DEFAULT_MODEL: 'gemini-flash-latest'
+  // Model mặc định:
+  DEFAULT_MODEL: 'gemini-3.8-flash'
 };
 
 // Hỗ trợ cả Service Worker (self) và Popup/Web (window)
