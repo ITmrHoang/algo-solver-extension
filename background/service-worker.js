@@ -66,7 +66,7 @@ ${input}`;
 
 /* ── Call Gemini API ─────────────────────────── */
 async function callGemini(prompt, apiKey, model) {
-  const modelName = model || 'gemini-3.8-flash';
+  const modelName = model || 'gemini-3.1-flash-lite';
   const url = `${GEMINI_API_BASE}/${modelName}:generateContent?key=${apiKey}`;
 
   const body = {
@@ -112,10 +112,10 @@ async function solve(input) {
 
   const apiKey = stored.apiKey || defaultConfig.DEFAULT_API_KEY || '';
   const language = stored.language || defaultConfig.DEFAULT_LANGUAGE || 'Python';
-  let model = stored.model || defaultConfig.DEFAULT_MODEL || 'gemini-3.8-flash';
+  let model = stored.model || defaultConfig.DEFAULT_MODEL || 'gemini-3.1-flash-lite';
   // Nếu storage đang lưu model 3.1-flash cũ bị thiếu chữ lite
   if (model === 'gemini-3.1-flash') {
-    model = 'gemini-3.8-flash';
+    model = 'gemini-3.1-flash-lite';
     await chrome.storage.local.set({ model });
   }
 

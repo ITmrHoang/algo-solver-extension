@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   const apiKey = data.apiKey || defaultConfig.DEFAULT_API_KEY || '';
   const language = data.language || defaultConfig.DEFAULT_LANGUAGE || 'Python';
-  let model = data.model || defaultConfig.DEFAULT_MODEL || 'gemini-3.8-flash';
+  let model = data.model || defaultConfig.DEFAULT_MODEL || 'gemini-3.1-flash-lite';
   if (model === 'gemini-3.1-flash') {
-    model = 'gemini-3.8-flash';
+    model = 'gemini-3.1-flash-lite';
     await chrome.storage.local.set({ model });
   }
 
